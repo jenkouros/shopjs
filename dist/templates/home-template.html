@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-3">
+        <side-menu></side-menu>
+    </div>
+    <div class="col-sm-9" style="margin-left: -25px;">
+        
+        <product-search></product-search>
+
+        <uib-carousel interval="interval" style="width: 870px;">
+            <uib-slide ng-repeat="slide in slides">
+
+                <div ng-repeat="image in slide" style="display: inline-block;">
+                    <img ng-src="{{image.image}}" style="margin:auto; width: 290px;">
+                    <!--<div class="carousel-caption">
+                            <h4>{{image.name}}</h4>
+                        </div>-->
+                </div>
+                <!-- TODO povezava na kategorijo -->
+            </uib-slide>
+        </uib-carousel>
+    </div>
+</div>
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-sm-12">
+        <category-previewer ng-repeat="category in categories" category="category"></category-previewer>
+    </div>
+</div>

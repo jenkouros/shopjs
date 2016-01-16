@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <div class="col-sm-3">
+        <side-menu presenting="-1"></side-menu>
+    </div>
+
+    <div class="col-sm-9">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Cena produkta</th>
+                    <th>Količina</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="c in cart">
+                <td>{{ c.product.name }}</td>
+                <td>{{ c.product.price | currency: '€' }}</td>
+                <td>{{ c.quantity }}</td>
+                <td>{{ c.quantity * (c.product.price | number) | currency: '€' }}</td>
+
+            </tr>
+
+        </table>
+
+        <pre>Skupaj: {{ total | currency: '€' }}</pre>
+        <button ng-click="placeOrder()" class="btn btn-primary">Naroči</button>
+        <button ng-click="emptyCart()" class="btn btn-warning">Izprazni košarico</button>
+    </div>
+</div>

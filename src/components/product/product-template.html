@@ -1,0 +1,27 @@
+﻿<div class="row">
+    <div class="col-sm-3">
+        <side-menu presenting="-1"></side-menu>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-4"><img ng-src="{{product.image}}" class="img-thumbnail" style="background-color: {{product.color}}" /></div>
+                <div class="col-sm-8">
+                    <div class="col-sm-12"><h4>{{ product.brand }}</h4></div>
+                    <div class="col-sm-12"><a ui-sref="product({id: product.id})"><h2 style="margin-top: 0; cursor: pointer">{{ product.name }}</h2></a></div>
+                    <div class="col-sm-12">
+                        <label ng-if="product.stock > 0" class="label label-success">Na zalogi</label>
+                        <label ng-if="product.stock== 0 && product.availableOn != null" class="label label-warning">Na zalogi od {{product.availableOn}}</label>
+                        <label ng-if="product.stock== 0 && product.availableOn == null" class="label label-default">Ni na zalogi</label>
+                        <label ng-if="product.onSale" class="label label-danger">Razprodaja</label>
+                    </div>
+                    <div class="col-sm-12"><h4 style="color: darkred">{{ product.price | currency: '€' }}</h4></div>
+                    <div class="col-sm-12"><h4>{{ product.description }}</h4></div>
+                    <div class="col-sm-12"><button ng-click="addProduct(product)" class="btn btn-primary">V košarico</button></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

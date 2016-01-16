@@ -1,0 +1,19 @@
+﻿
+
+<div class="row">
+    <div class="col-sm-3">
+        <side-menu presenting="category.id"></side-menu>
+    </div>
+    <div class="col-sm-9">
+        <product-search></product-search>
+        <div>
+            <h1>{{ category.category }}</h1>
+        </div>
+
+        <div id="products-container">
+            <div ng-repeat="product in products track by product.id">
+                <category-product product="product"></category-product>
+            </div>
+        </div>
+    </div>
+</div>

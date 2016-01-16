@@ -1,0 +1,9 @@
+﻿<ul class="nav nav-pills nav-stacked">
+    <li role="presentation" ng-class="{active : activeLink == null}"><a ui-sref="home"><span class="glyphicon glyphicon-home"></span> Domov</a></li>   
+    <li ng-repeat="category in categories" role="presentation" ng-class="{ active : activeLink == category.id }" ng-click="changeCategory(category.id)">
+        <a ui-sref="category({id:{{category.id}}})">
+            {{category.category}}
+        </a>
+    </li>
+</ul>
+
